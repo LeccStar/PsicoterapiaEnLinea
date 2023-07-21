@@ -70,7 +70,7 @@
           <li><a href="#hero">Inicio</a></li>
           <li><a href="#about">Acerca de mí</a></li>
           <li><a href="#services">Servicios</a></li>
-          <li><a href="#contact">Contacto</a></li>
+          <li><a href="#contact">Agendar</a></li>
         </ul>
       </nav><!-- .navbar -->
 
@@ -358,11 +358,11 @@
                     sintamos atrapados en problemas o creencias negativas sobre nosotros mismos.
                     <br><br>
                     Aquí es donde entra en juego la terapia narrativa, una herramienta poderosa que te ofrece la
-                    oportunidad de explorar y cuestionar esas historias. A través de nuestro trabajo juntos, podemos
+                    oportunidad de explorar y cuestionar esas historias. A través de nuestro trabajo juntxs, podemos
                     examinar las ideas negativas que te has creído y buscar nuevas formas de contar tu historia, formas
                     más positivas y fortalecedoras.
                     <br><br>
-                    Imagina que somos como un equipo de escritura personal. Juntos, reescribiremos los capítulos de tu
+                    Imagina que somos como un equipo de escritura personal. Juntxs, reescribiremos los capítulos de tu
                     vida. Te guiaré para que descubras recursos y habilidades que has pasado por alto, y te ayudaré a
                     cambiar tu perspectiva. Podrás ver tus experiencias desde un ángulo diferente y encontrar nuevas
                     soluciones a los desafíos que enfrentas.
@@ -425,9 +425,6 @@
                 </h3>
                 <div id="faq-content-4" class="accordion-collapse collapse" data-bs-parent="#faqlist">
                   <div class="accordion-body">
-                    Claro, puedo ayudarte con eso. Aquí tienes una descripción de las ventajas de la terapia en línea
-                    sobre la terapia presencial, desde tu perspectiva como terapeuta explicándoselo a un paciente:
-                    <br><br>
                     La terapia en línea ofrece una serie de beneficios que pueden ser muy útiles para ti. Una de las
                     ventajas más destacadas es la comodidad y conveniencia que brinda. Puedes acceder a las sesiones de
                     terapia desde la comodidad de tu hogar, sin tener que desplazarte ni preocuparte por el tiempo de
@@ -471,7 +468,6 @@
                   </div>
                 </div>
               </div><!-- # Faq item-->
-
             </div>
 
           </div>
@@ -539,8 +535,18 @@
                   <input type="email" class="form-control" name="email" id="email" placeholder="Tu Email">
                 </div>
               </div>
-              <div class="form-group mt-3">
-                <input type="" class="form-control" name="subject" id="subject" placeholder="Tipo de terapia" required>
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <select name="teraphy" class="form-control" id="subject">
+                    <option value="" disabled selected class="text-muted">Tipo de Terapia</option>
+                    <option value="individual">Individual</option>
+                    <option value="Pareja">Pareja</option>
+                    <option value="Familiar">Familiar</option>
+                  </select>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="number" class="form-control" name="number" id="number" placeholder="Tu Teléfono">
+                </div>
               </div>
               <div class="form-group mt-3">
                 <textarea class="form-control" name="message" rows="7" placeholder="Mensaje" required></textarea>
@@ -550,7 +556,7 @@
                 <div class="error-message"></div>
                 <div class="sent-message">Your message has been sent. Thank you!</div>
               </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
+              <div class="text-center"><button type="submit">Solicitar una Cita</button></div>
             </form>
           </div><!-- End Contact Form -->
 
@@ -676,12 +682,12 @@
 
     form.addEventListener("submit", async (event) => {
       try {
-        const docRef = await addDoc(collection(db, "users"), {
+        const docRef = await addDoc(collection(db, "Px"), {
           name: event.target.name.value,
+          number: event.target.number.value,
           email: event.target.email.value,
-          subject: event.target.subject.value,
+          teraphy: event.target.teraphy.value,
           message: event.target.message.value
-
         });
         form.reset()
       } catch (e) {
