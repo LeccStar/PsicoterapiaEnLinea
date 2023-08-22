@@ -23,7 +23,7 @@
   --color-primary: #F2F2F2;
   --color-secondary: #3B5947;
   --colo-darkBlue: #162B33;
-  --color-lightblue:#446F80;
+  --color-lightblue: #446F80;
 }
 
 /* Smooth scroll behavior */
@@ -240,7 +240,7 @@ section {
 # Header
 --------------------------------------------------------------*/
 .topbar {
-  background: linear-gradient(90deg,#446F80,#162B33);
+  background: linear-gradient(90deg, #446F80, #162B33);
   height: 40px;
   font-size: 14px;
   transition: all 0.5s;
@@ -1979,6 +1979,18 @@ section {
   font-weight: 700;
   margin-bottom: 15px;
   font-size: 24px;
+}
+
+@media (max-width: 1200px) {
+  .hero .icon-box {
+    padding: 10px 10px;
+  }
+
+  .hero .icon-box .title {
+    font-weight: 450;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
 }
 
 .hero .icon-box .title a {
